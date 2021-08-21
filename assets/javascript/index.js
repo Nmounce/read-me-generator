@@ -15,31 +15,51 @@ inquirer
             type: 'input',
         },
         {
+            name: 'installation',
+            question: '',
+            type: '',
+            choices: [""],
+        },
+        {
             name: 'usage',
             question: 'Enter usage instructions',
             type: 'input',
         },
-        { //checkbox
-            name: 'contributing',
-            question: 'Would you like to include instructions on how to fork the repo via GitHub?',
-            type: 'confirm',
-        },
-        // {
-        //     name: 'test',
-        //     question: '',
-        //     type: '',
-        //     choices: [""],
-        // },
-        { //multi-select
+        {
             name: 'licensing',
             question: 'Which license would you like to use for this application?',
             type: 'list',
             choices: ["Apache v2.0", "Creative Commons 1.0", "MIT", "The Unlicense"]
         },
-        { //multi-prompt
-            name: 'contact',
-            question: 'Insert your name, github link, email address',
+        {
+            name: 'contributing',
+            question: 'Would you like to include instructions on how to fork the repo via GitHub?',
             type: 'confirm',
+        },
+        { //fix
+            name: 'test',
+            question: 'Would you like to include instructions on how to fork the repo via GitHub?',
+            type: 'confirm',
+        },
+        { //fix
+            name: 'questions',
+            question: 'Would you like to include instructions on how to fork the repo via GitHub?',
+            type: 'confirm',
+        },
+        {
+            name: 'name',
+            question: 'Insert your name',
+            type: 'input',
+        },
+        {
+            name: 'email',
+            question: 'Insert your email address',
+            type: 'input',
+        },
+        {
+            name: 'insert your GitHub account',
+            question: 'Insert your name',
+            type: 'input',
         },
     ]).then((data) => {
         // const fileName = `${data.name.toLowerCase().split(' ').join('')}.json`;
@@ -49,30 +69,40 @@ inquirer
         // );
 
         var markdown = `# ${data.title}
-
+        ${handleBadge(data.licensing)}
         ## Description
         ${data.description}
+
+        ## Table of Contents
+
+        ## Installation
+        ${data.install}
 
         ## Usage
         ${data.usage}
 
-        ## Contributing
-        ${markdown += handleCont(data.contributing)}
-
         ## Licensing
-        ${markdown += handleBadge(data.licensing)}
+        ${handleLicense(data.licensing)}
 
-        ## Contact
-        ${data.contact}
+        ## Contributing
+        ${handleCont(data.contributing)}
+
+        ## Tests
+        ${data.tests}
+
+        ## Questions
+        ${data.name}
+        ${data.email}
+        ${data.git}
         `
-
-
+        // markdown += handleCont(data.contributing)
+        // markdown += handleBadge(data.licensing)
         fs.writeFileSync("test.md", markdown);
     });
 
 function handleCont(info) {
     if (info === true) {
-        return `## Contribute to README Generator
+        return `Contribute to README Generator
             To contribute to README Generator, follow these steps:
                 1. Fork this repository.
                 2. Create a branch: git checkout -b <branch name>.
@@ -88,15 +118,31 @@ function handleCont(info) {
 function handleBadge(info) {
     switch (info) {
         case "Apache v2.0":
-            return apacheBadge, apacheLink, apacheLicense;
+            return apacheBadge;
         case "Creative Commons 1.0":
-            return creativeBadge, creativeLink, creativeLicense;
+            return creativeBadge;
         case "MIT":
-            return mitBadge, mitLink, mitLicense;
+            return mitBadge;
         case "The Unlicense":
-            return unBadge, unLink, unLicense;
+            return unBadge;
         default:
-            return creativeBadge, creativeLink, creativeLicense;
+            return creativeBadge;
+            break;
+    }
+}
+
+function handleLicense(info) {
+    switch (info) {
+        case "Apache v2.0":
+            return apacheLink, apacheLicense;
+        case "Creative Commons 1.0":
+            return creativeLink, creativeLicense;
+        case "MIT":
+            return mitLink, mitLicense;
+        case "The Unlicense":
+            return unLink, unLicense;
+        default:
+            return creativeLink, creativeLicense;
             break;
     }
 }
