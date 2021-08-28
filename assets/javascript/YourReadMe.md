@@ -25,7 +25,8 @@ assets\snippets\Untitled_ Aug 28, 2021 7_57 AM (1).webm
 JavaScript,Node.js
 
 ## Installation
-undefined
+Node installation: Visit the official Node.js website(https://nodejs.org/) and download the installer. Also, be sure to have `git` available (find git [here](https://git-scm.com/)). If the installation is successful, you should be able to run the following command: <$node --version>. After installing Node, install `yarn` by running the following command: <npm install -g yarn>.
+
 
 ## Usage
 After cloning this file to your repository, open the terminal and enter `node index.js` to run the command-line prompts. Simply complete the required steps, entering in your README information and making the appropriate selections along the way. Your completed README file will be automatically generated to the test.md file.
