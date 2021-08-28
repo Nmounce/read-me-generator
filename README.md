@@ -4,7 +4,8 @@
 ## Description
 This command line application allows users to quickly and easily create a high quality README.md file for any open source project on GitHub.  
 ![](true)
-assets\snippets\Untitled_ Aug 28, 2021 7_57 AM (1).webm
+See a walkthrough video here:
+https://drive.google.com/file/d/1Xhn7OTdyWjjORBldbZA_EoTvE5NiCM5n/view
 
 ## Table of Contents
 [technologies](#technologies)
