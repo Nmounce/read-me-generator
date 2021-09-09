@@ -15,8 +15,8 @@ inquirer
         },
         {
             name: 'screenshot',
-            message: 'Code screenshot: Insert the url or local path where image is located:',
-            type: 'input',
+            message: 'Add a screenshot?',
+            type: 'confirm',
         },
         {
             name: 'table',
@@ -38,8 +38,8 @@ inquirer
         },
         {
             name: 'installation',
-            message: 'What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.',
-            type: 'input',
+            message: 'Add basic installation instructions?',
+            type: 'confirm',
         },
         {
             name: 'usage',
@@ -105,7 +105,7 @@ ${handleBadge(data.licensing)}
 
 ## Description
 ${data.description}
-![](${!data.screenshot})
+${handleScreenShot(data.screenshot)}
 
 ## Table of Contents
 ${data.table[0]}
@@ -126,7 +126,7 @@ ${data.technologies}
 ${data.prerequisites}
 
 ## Installation
-${data.install}
+${handleInstall(data.install)}
 
 ## Usage
 ${data.usage}
@@ -142,7 +142,7 @@ ${handleCont(data.contributing)}
 
 ## Tests
 ${data.tests}
-![](${data.testSnippets})
+${handleScreenShot2(data.screenshot)}
 
 ## Acknowledgements
 ${data.ackInput}
@@ -172,16 +172,32 @@ function handleBadge(info) {
     }
 }
 
+function handleScreenShot(info) {
+    if (info === true) {
+        return '![]()'
+    } else {
+        return ""
+    }
+}
+
+function handleScreenShot2(info) {
+    if (info === true) {
+        return '![]()'
+    } else {
+        return ""
+    }
+}
+
 function handleCont(info) {
     if (info === true) {
         return `Contribute to README Generator
-            To contribute to README Generator, follow these steps:
-                1. Fork this repository.
-                2. Create a branch: git checkout -b <branch name>.
-                3. Make your changes and commit them: git commit -m '<commit message>'.
-                4. Push to the original branch: git push origin <project_name/<location>
-                5. Create the pull request.
-                Alternatively, see the Github documentation on creating a pull request.`
+    To contribute to README Generator, follow these steps:
+    1. Fork this repository.
+    2. Create a branch: git checkout -b <branch name>.
+    3. Make your changes and commit them: git commit -m '<commit message>'.
+    4. Push to the original branch: git push origin <project_name/<location>
+    5. Create the pull request.
+    Alternatively, see the Github documentation on creating a pull request.`
     } else {
         return ""
     }
@@ -190,6 +206,14 @@ function handleCont(info) {
 function handleContTable(info) {
     if (info === true) {
         return '## Contributing'
+    } else {
+        return ""
+    }
+}
+
+function handleInstall(info) {
+    if (info === true) {
+        return 'To install this application: branch the GitHub Repo and clone the repo to your local machine. If not already installed, you must install the node dependencies by running npm install command in your terminal. Once completed, you are ready to use the application!'
     } else {
         return ""
     }

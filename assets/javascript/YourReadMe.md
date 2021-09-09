@@ -1,38 +1,36 @@
-# README Generator
-![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)
+# Note Taker
+![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 
 ## Description
-This command line application allows users to quickly and easily create a high quality README.md file for any open source project on GitHub.  
+Note Taker can be used to write and save notes that uses Express.js back end and will save and retrieve note data from a JSON file. 
 ![](true)
-assets\snippets\Untitled_ Aug 28, 2021 7_57 AM (1).webm
 
 ## Table of Contents
-[technologies](#technologies)
-[prerequisites](#prerequisites)
-[installation](#installation)
+[Technologies](#technologies)
+[Prerequisites](#prerequisites)
+[Installation](#installation)
 [Usage](#usage)
 [Licensing](#licensing)
 [Project Status](#projectStatus)
 [Contributing](#contributing)
-[Test](#test)
 [Acknowledgements](#acknowledgements)
-[messages](#messages)
+[Questions](#questions)
+undefined
 
 ## Technologies
 * You are using a Linux, Mac or Windows machine.,* You have a basic understanding of javascript.
 
 ## Prerequisites
-JavaScript,Node.js
+CSS,HTML,JavaScript,Node.js
 
 ## Installation
-Node installation: Visit the official Node.js website(https://nodejs.org/) and download the installer. Also, be sure to have `git` available (find git [here](https://git-scm.com/)). If the installation is successful, you should be able to run the following command: <$node --version>. After installing Node, install `yarn` by running the following command: <npm install -g yarn>.
-
+undefined
 
 ## Usage
-After cloning this file to your repository, open the terminal and enter `node index.js` to run the command-line prompts. Simply complete the required steps, entering in your README information and making the appropriate selections along the way. Your completed README file will be automatically generated to the test.md file.
+local machine. If not already installed, you must install the node dependencies by running
 
 ## Licensing
-[Creative Commons] CC0 1.0 Universal CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES.DISTRIBUTION OF THIS DOCUMENT DOES NOT CREATE AN ATTORNEY - CLIENT RELATIONSHIP.CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN 'AS-IS' BASIS.CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED HEREUNDER, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM THE USE OF THIS DOCUMENT OR THE INFORMATION OR WORKS PROVIDED HEREUNDER.
+[APACHE] Licensed under the Apache License, Version 2.0(the 'License'); you may not use this file except in compliance with the License. You may obtain a copy of the License at 'http: //www.apache.org/licenses/LICENSE-2.0' Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an 'AS IS' BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## Project Status
 Complete
@@ -52,10 +50,10 @@ undefined
 ![]()
 
 ## Acknowledgements
-I would like to thank Ryan Skog, TA and Tutor!
+TA's of the UC Davis Coding Bootcamp
 
 ## Questions
-My name is Dominique Mounce
-Reach me with additional questions: nikkimounce@gmail.com
+My name is Nikki Mounce
+Reach me with additional questions: nikkicancode@gmail.com
 Check out my GitHub: github.com/Nmounce
         
